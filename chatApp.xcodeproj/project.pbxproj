@@ -14,6 +14,7 @@
 		38D504C021A5040F001097FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D504BE21A5040F001097FD /* LaunchScreen.storyboard */; };
 		38D504CB21A5040F001097FD /* chatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504CA21A5040F001097FD /* chatAppTests.swift */; };
 		38D504D621A5040F001097FD /* chatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504D521A5040F001097FD /* chatAppUITests.swift */; };
+		38D504E521A517C4001097FD /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504E421A517C4001097FD /* loginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		38D504D121A5040F001097FD /* chatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D504D521A5040F001097FD /* chatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatAppUITests.swift; sourceTree = "<group>"; };
 		38D504D721A5040F001097FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38D504E421A517C4001097FD /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,8 @@
 		38D504B421A5040D001097FD /* chatApp */ = {
 			isa = PBXGroup;
 			children = (
+				38D504E321A5178A001097FD /* Controller */,
 				38D504B521A5040D001097FD /* AppDelegate.swift */,
-				38D504B721A5040D001097FD /* ViewController.swift */,
 				38D504B921A5040D001097FD /* Main.storyboard */,
 				38D504BC21A5040F001097FD /* Assets.xcassets */,
 				38D504BE21A5040F001097FD /* LaunchScreen.storyboard */,
@@ -123,6 +125,15 @@
 				38D504D721A5040F001097FD /* Info.plist */,
 			);
 			path = chatAppUITests;
+			sourceTree = "<group>";
+		};
+		38D504E321A5178A001097FD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38D504E421A517C4001097FD /* loginController.swift */,
+				38D504B721A5040D001097FD /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38D504E521A517C4001097FD /* loginController.swift in Sources */,
 				38D504B821A5040D001097FD /* ViewController.swift in Sources */,
 				38D504B621A5040D001097FD /* AppDelegate.swift in Sources */,
 			);
