@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class loginController: UIViewController {
 
     let inputContainerView = { () -> UIView in
@@ -18,15 +18,41 @@ class loginController: UIViewController {
         view.layer.masksToBounds = true
         return view
     }()
-    let loginRegisterButton: UIButton = { () -> UIButton in
+    lazy var loginRegisterButton: UIButton = { () -> UIButton in
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 80, g: 101, b:161)
         button.setTitle("Register", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 2
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
     }()
+    @objc func handleRegister(){
+        print("tapping")
+        guard let email = emailTextField.text,let password = passwordTextField.text, let name = nameTextField.text else {
+            return
+        }
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            // ...
+            guard let user = authResult?.user else { return }
+            if error != nil {
+                print(error)
+                return
+            }
+            let uid = user.uid
+            // Successfully Authenticated
+            let ref = Database.database().reference()
+            let userReference = ref.child("users").child(uid)
+            let values = ["name": name, "email": email]
+            userReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if err != nil {
+                    print(err)
+                    return
+                }
+            })
+        }
+    }
     let nameTextField: UITextField = { () -> UITextField in
             let tf = UITextField()
         tf.placeholder = "Name"

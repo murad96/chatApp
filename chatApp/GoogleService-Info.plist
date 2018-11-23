@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>988984565504-f9do8f5oqdnl0345eu51d8qj3dkshin7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.988984565504-f9do8f5oqdnl0345eu51d8qj3dkshin7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAsHYQbkKV6koLmAeA3r7GrwT7kn_DjJ-Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>988984565504</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>murad.chatApp</string>
+	<key>PROJECT_ID</key>
+	<string>chatapp1-836be</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chatapp1-836be.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:988984565504:ios:cb210770356972ad</string>
+	<key>DATABASE_URL</key>
+	<string>https://chatapp1-836be.firebaseio.com</string>
+</dict>
+</plist>
