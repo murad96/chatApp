@@ -25,9 +25,28 @@ class loginController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 2
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleLoginRegister), for: .touchUpInside)
         return button
     }()
+    @objc func handleLoginRegister(){
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            handleLogin()
+        }else {
+            handleRegister()
+        }
+    }
+    func handleLogin(){
+        guard let email = emailTextField.text,let password = passwordTextField.text else {
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+            if error != nil {
+                print(error)
+            }
+            // Successfully loged in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
     @objc func handleRegister(){
         print("tapping")
         guard let email = emailTextField.text,let password = passwordTextField.text, let name = nameTextField.text else {
@@ -50,6 +69,7 @@ class loginController: UIViewController {
                     print(err)
                     return
                 }
+                self.dismiss(animated: true, completion: nil)
             })
         }
     }
@@ -84,10 +104,10 @@ class loginController: UIViewController {
         sc.translatesAutoresizingMaskIntoConstraints = false
         sc.tintColor = .white
         sc.selectedSegmentIndex = 1
-        sc.addTarget(self, action: #selector(handleLoginRegister), for: .valueChanged)
+        sc.addTarget(self, action: #selector(setupHandleLoginRegister), for: .valueChanged)
         return sc
     }()
-    @objc func handleLoginRegister(){
+    @objc func setupHandleLoginRegister(){
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)
         
