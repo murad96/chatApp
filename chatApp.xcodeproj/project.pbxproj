@@ -10,6 +10,8 @@
 		1971B43A2CB944796DCE9848 /* Pods_chatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00751A392CEB42A8735C579F /* Pods_chatApp.framework */; };
 		3801322621A9A17700C230D9 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3801322521A9A17700C230D9 /* NewMessageController.swift */; };
 		3801322921A9B22B00C230D9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3801322821A9B22B00C230D9 /* User.swift */; };
+		386D30E12275E56A0020F314 /* loginController+handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D30DF2275E56A0020F314 /* loginController+handlers.swift */; };
+		386D30E22275E56A0020F314 /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D30E02275E56A0020F314 /* loginController.swift */; };
 		38D0904C21A82CB20022EAD5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38D0904B21A82CB20022EAD5 /* GoogleService-Info.plist */; };
 		38D504B621A5040D001097FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504B521A5040D001097FD /* AppDelegate.swift */; };
 		38D504B821A5040D001097FD /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504B721A5040D001097FD /* MessageController.swift */; };
@@ -18,7 +20,6 @@
 		38D504C021A5040F001097FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D504BE21A5040F001097FD /* LaunchScreen.storyboard */; };
 		38D504CB21A5040F001097FD /* chatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504CA21A5040F001097FD /* chatAppTests.swift */; };
 		38D504D621A5040F001097FD /* chatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504D521A5040F001097FD /* chatAppUITests.swift */; };
-		38D504E521A517C4001097FD /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D504E421A517C4001097FD /* loginController.swift */; };
 		3A57097F2E003D776D78D90C /* Pods_chatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BC20D5EA5F95B380B6EB0 /* Pods_chatAppTests.framework */; };
 		A1D055401882F53BDC869A93 /* Pods_chatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0F08DF56DDF71D6AA27F2F /* Pods_chatAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,8 @@
 		12F3CBE4B6EA0C3082028667 /* Pods-chatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatAppTests/Pods-chatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3801322521A9A17700C230D9 /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		3801322821A9B22B00C230D9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		386D30DF2275E56A0020F314 /* loginController+handlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "loginController+handlers.swift"; sourceTree = "<group>"; };
+		386D30E02275E56A0020F314 /* loginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
 		38D0904B21A82CB20022EAD5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38D504B221A5040D001097FD /* chatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D504B521A5040D001097FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +63,6 @@
 		38D504D121A5040F001097FD /* chatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D504D521A5040F001097FD /* chatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatAppUITests.swift; sourceTree = "<group>"; };
 		38D504D721A5040F001097FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38D504E421A517C4001097FD /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
 		4C958D647EB7367BD872CCED /* Pods-chatAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatAppUITests/Pods-chatAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD65FA74925CEB8598FD5103 /* Pods-chatAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatAppTests/Pods-chatAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB5BC20D5EA5F95B380B6EB0 /* Pods_chatAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +165,8 @@
 		38D504E321A5178A001097FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				38D504E421A517C4001097FD /* loginController.swift */,
+				386D30E02275E56A0020F314 /* loginController.swift */,
+				386D30DF2275E56A0020F314 /* loginController+handlers.swift */,
 				38D504B721A5040D001097FD /* MessageController.swift */,
 				3801322521A9A17700C230D9 /* NewMessageController.swift */,
 			);
@@ -427,8 +430,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3801322621A9A17700C230D9 /* NewMessageController.swift in Sources */,
-				38D504E521A517C4001097FD /* loginController.swift in Sources */,
+				386D30E12275E56A0020F314 /* loginController+handlers.swift in Sources */,
 				38D504B821A5040D001097FD /* MessageController.swift in Sources */,
+				386D30E22275E56A0020F314 /* loginController.swift in Sources */,
 				3801322921A9B22B00C230D9 /* User.swift in Sources */,
 				38D504B621A5040D001097FD /* AppDelegate.swift in Sources */,
 			);

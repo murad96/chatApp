@@ -47,32 +47,7 @@ class loginController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         })
     }
-    @objc func handleRegister(){
-        print("tapping")
-        guard let email = emailTextField.text,let password = passwordTextField.text, let name = nameTextField.text else {
-            return
-        }
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            // ...
-            guard let user = authResult?.user else { return }
-            if error != nil {
-                print(error)
-                return
-            }
-            let uid = user.uid
-            // Successfully Authenticated
-            let ref = Database.database().reference()
-            let userReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            userReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                if err != nil {
-                    print(err)
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
-            })
-        }
-    }
+    
     let nameTextField: UITextField = { () -> UITextField in
             let tf = UITextField()
         tf.placeholder = "Name"
@@ -92,13 +67,17 @@ class loginController: UIViewController {
         tf.isSecureTextEntry = true
         return tf
     }()
-    let profileImageView: UIImageView = { () -> UIImageView in
+    lazy var profileImageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView()
         imageView.image = UIImage(named: "icon")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleToFill
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
+    
     let loginRegisterSegmentedControl: UISegmentedControl = { () -> UISegmentedControl in
         let sc = UISegmentedControl(items: ["Login", "Register"])
         sc.translatesAutoresizingMaskIntoConstraints = false
