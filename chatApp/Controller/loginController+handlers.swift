@@ -23,17 +23,43 @@ extension loginController: UIImagePickerControllerDelegate, UINavigationControll
             }
             let uid = user.uid
             // Successfully Authenticated
-            let ref = Database.database().reference()
-            let userReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
-            userReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
-                if err != nil {
-                    print(err)
-                    return
-                }
-                self.dismiss(animated: true, completion: nil)
-            })
+            let imageName = NSUUID().uuidString
+            let storageRef = Storage.storage().reference().child("\(imageName).png")
+            if let uploadData = self.profileImageView.image!.pngData(){
+                storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    /*let profileImageURL = metadata.downloadURL().absoluteString{
+                        let values = ["name": name, "email": email, "profileImageURL": metadata.downloadURL]
+                        self.registerUserIntoDatabaseWithUID(uid: uid, values: values)
+                    }*/
+                    storageRef.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print(error!.localizedDescription)
+                            return
+                        }
+                        if let profileImageUrl = url?.absoluteString {
+                            let values = ["name": name, "email": email, "profileImageUrl": imageName]
+                            self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String : AnyObject])
+                        }
+                    })
+                    
+                })
+            }
         }
+    }
+    func registerUserIntoDatabaseWithUID(uid: String, values: [String: Any]){
+        
+        let ref = Database.database().reference()
+        let userReference = ref.child("users").child(uid)
+        userReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                print(err)
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     @objc func handleSelectProfileImageView(){
         let picker = UIImagePickerController()
